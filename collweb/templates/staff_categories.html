@@ -1,0 +1,22 @@
+<!DOCTYPE>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head_block %}
+
+{% endblock %}
+
+{% block body_block %}
+<h1 class="header">Hi {{ user.username }}</h1>
+<h1>successfully loged in</h1>
+<h2>which category u want to make changes</h2>
+<div class="button1"><button type="button" onclick="quiz()" >Quiz</button></div>
+<a href="">question bank</a>
+<div class="dropdown">
+
+
+</div>
+<a id = "anchor" href=""></a>
+{% endblock %}
+{% block for_js %}
+<script src="{% static 'js/staff_categories.js' %}" type="text/javascript"></script>
+{% endblock %}

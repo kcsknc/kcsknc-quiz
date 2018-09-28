@@ -1,0 +1,39 @@
+
+
+{% extends "base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('p').click(function(){
+      $.ajax({
+          url:"http://127.0.0.1:8000/quiz/insert/",
+          type: 'get', // This is the default though, you don't actually need to always mention it
+          dataType: "json",
+          async:true,
+          data:{ csrfmiddlewaretoken : '{{csrf_token}}' },
+          success: function(data) {
+						console.log(data);
+            alert(JSON.stringify(data));
+						json = JSON.stringify(data[0].fields.question);
+							console.log(json);
+							$('p').html(json);
+
+          },
+          failure: function(data) {
+              alert('Got an error dude');
+          }
+      });
+    });
+    });
+    </script>
+    <p>this is a para</p>
+    <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+</form>
+{% endblock %}

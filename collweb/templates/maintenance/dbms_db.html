@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+{% load staticfiles %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>New Tab App</title>
+  <script
+			  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+			  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://taniarascia.github.io/primitive/css/main.min.css">
+</head>
+
+<body>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('h1').hide();
+
+
+    $.ajax({
+        url:"http://127.0.0.1:8000/quiz/insert/",
+        type: 'get', // This is the default though, you don't actually need to always mention it
+        data: value,
+        success: function(data) {
+            alert(data);
+        },
+        failure: function(data) {
+            alert('Got an error dude');
+        }
+    });
+  });
+  </script>
+
+
+  <div class="small-container">
+    <h1>New Tab App</h1>
+
+    <form>
+      <input id="item" type="text" placeholder="New" required>
+    </form>
+
+    <div>
+      {% if quizes %}
+      <ol>
+  {% for person in quizes %}
+  <li>User Info</li>
+    <ul>
+      <li>question: {{person.question}}</li>
+      <li>choise1: {{person.choise1}}</li>
+      <li>choise2: {{person.choise2}}</li>
+      <li>choise3: {{person.choise3}}</li>
+      <li>choise4: {{person.choise4}}</li>
+      <li>correct: {{person.correct}}</li>
+    </ul>
+    {% endfor %}
+</ol>
+  {% endif %}
+    </div>
+
+    <h2>Items</h2>
+    <ol>
+    {% for i in content %}
+    <ol>{{i}}</ol>
+    {% endfor %}
+  </ol>
+    <button>Clear All</button>
+
+  </div>
+
+
+</body>
+
+</html>

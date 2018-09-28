@@ -1,0 +1,45 @@
+from django.urls import path
+from . import views
+
+
+app_name = 'quiz'
+
+urlpatterns = [
+    path('java_login/',views.java_login,name = 'java_login'),
+    path('c_login/',views.c_login,name = 'c_login'),
+    path('cpp_login/',views.cpp_login,name = 'cpp_login'),
+    path('vb_login/',views.vb_login,name = 'vb_login'),
+    path('ca_login/',views.ca_login,name = 'ca_login'),
+    path('os_login/',views.os_login,name = 'os_login'),
+    path('dm_login/',views.dm_login,name = 'dm_login'),
+    # path('staff_categories/',views.staff_categories,name = 'staff_categories'),
+    # path('register/',views.register,name = 'register'),
+    path('index/',views.index,name='index'),
+    # path('categories/',views.categories,name = 'categories'),
+    path('dbms_login/',views.dbms_login,name = 'dbms_login'),
+    path('quiz/',views.quiz,name = 'quiz'),
+    path('dbms_db/',views.dbms_db,name = 'dbms_db'),
+    path('dbms_regno/',views.dbms_regno,name='dbms_regno'),
+    path('os_db/',views.os_db,name = 'os_db'),
+    path('os_regno/',views.os_regno,name='os_regno'),
+    path('ca_db/',views.ca_db,name = 'ca_db'),
+    path('ca_regno/',views.ca_regno,name='ca_regno'),
+    path('c_db/',views.c_db,name = 'c_db'),
+    path('c_regno/',views.c_regno,name='c_regno'),
+    path('cpp_db/',views.cpp_db,name = 'cpp_db'),
+    path('cpp_regno/',views.cpp_regno,name='cpp_regno'),
+    path('java_db/',views.java_db,name = 'java_db'),
+    path('java_regno/',views.java_regno,name='java_regno'),
+    path('vb_db/',views.vb_db,name = 'vb_db'),
+    path('vb_regno/',views.vb_regno,name='vb_regno'),
+    path('dm_db/',views.dm_db,name = 'dm_db'),
+    path('dm_regno/',views.dm_regno,name='dm_regno'),
+    path('os_quiz/',views.os_quiz,name='os_quiz'),
+    path('ca_quiz/',views.os_quiz,name='ca_quiz'),
+    path('c_quiz/',views.os_quiz,name='c_quiz'),
+    path('cpp_quiz/',views.os_quiz,name='cpp_quiz'),
+    path('java_quiz/',views.os_quiz,name='java_quiz'),
+    path('vb_quiz/',views.os_quiz,name='vb_quiz'),
+    path('dm_quiz/',views.os_quiz,name='dm_quiz'),
+    path('dbms_quiz/',views.os_quiz,name='dbms_quiz'),
+]
